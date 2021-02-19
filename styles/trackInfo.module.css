@@ -1,0 +1,106 @@
+.container {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "trackinfo"
+    "player";
+  height: 100vh;
+  align-items: end;
+}
+
+.header {
+  grid-area: header;
+  height: 6em;
+  display: grid;
+  grid-template-areas: "home playing null";
+}
+
+.nowPlaying {
+  grid-area: playing;
+  justify-self: center;
+  align-self: center;
+}
+
+.homeBtn {
+  grid-area: home;
+  background: transparent;
+  border-color: transparent;
+  justify-self: flex-start;
+  padding-left: 1.25em;
+}
+
+.trackInfo {
+  grid-area: trackinfo;
+  display: grid;
+  grid-template-areas:
+    "cover"
+    "song"
+    "artist";
+  justify-content: center;
+  text-align: center;
+}
+
+.cover {
+  grid-area: cover;
+  width: 23em;
+  height: 23em;
+  object-fit: cover;
+  border-radius: 25px;
+}
+
+.song {
+  color: var(--primary-text);
+  margin-top: 2em;
+  grid-area: song;
+  font-size: 1.25em;
+}
+
+.artist {
+  color: var(--secondary-text);
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  grid-area: artist;
+  font-size: 0.95em;
+}
+
+.player {
+  grid-area: player;
+  background-color: #282a3d;
+  width: 100%;
+  height: 14em;
+  display: grid;
+  align-items: end;
+  grid-template-areas: "back play for";
+  border-radius: 40px 40px 0 0;
+  justify-content: space-evenly;
+}
+
+.backBtn {
+  background: transparent;
+  grid-area: back;
+  margin-bottom: 3em;
+  width: 4em;
+  height: 4em;
+  border-radius: 100%;
+  border-color: transparent;
+}
+
+.playBtn {
+  background: #4e5063;
+  grid-area: play;
+  width: 4em;
+  height: 4em;
+  border-radius: 100%;
+  margin-bottom: 3em;
+  border-color: transparent;
+}
+
+.forBtn {
+  background: transparent;
+  grid-area: for;
+  margin-bottom: 3em;
+  width: 4em;
+  height: 4em;
+  border-radius: 100%;
+  border-color: transparent;
+}
