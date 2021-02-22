@@ -1,26 +1,23 @@
-import styles from "../styles/trackInfo.module.css";
+import styles from "../styles/audioplayer.module.css";
 import AudioControls from "./AudioControls";
 import TrackDetails from "./TrackDetails";
 import { useEffect, useState, useRef } from "react";
 
 const AudioPlayer = ({ tracks, initialID }) => {
-  // State
   const initialTrackIndex = tracks.findIndex((track) => track.id === initialID);
 
   const [trackIndex, setTrackIndex] = useState(initialTrackIndex);
   const [trackProgress, setTrackProgress] = useState(0);
   const [isPlaying, setIsPlaying] = useState(0);
 
-  // Destructure for conciseness
   const { audioSrc, cover, artist, song } = tracks[trackIndex];
 
-  // Refs
   const audioRef = useRef(new Audio(audioSrc));
   const intervalRef = useRef();
   const isReady = useRef(false);
-  // Destructure for conciseness
+
   const { duration } = audioRef.current;
-  // Go to prev track
+
   const toPrevTrack = () => {
     if (trackIndex - 1 < 0) {
       setTrackIndex(tracks.length - 1);
@@ -28,7 +25,7 @@ const AudioPlayer = ({ tracks, initialID }) => {
       setTrackIndex(trackIndex - 1);
     }
   };
-  // Go to next track
+
   const toNextTrack = () => {
     if (trackIndex < tracks.length - 1) {
       setTrackIndex(trackIndex + 1);
@@ -36,7 +33,7 @@ const AudioPlayer = ({ tracks, initialID }) => {
       setTrackIndex(0);
     }
   };
-  // Start or pause
+
   useEffect(() => {
     if (isPlaying) {
       audioRef.current.play();
@@ -46,14 +43,12 @@ const AudioPlayer = ({ tracks, initialID }) => {
   }, [isPlaying]);
 
   useEffect(() => {
-    // Pause and clean up on unmount
     return () => {
       audioRef.current.pause();
       clearInterval(intervalRef.current);
     };
   }, []);
 
-  // Handle setup when changing tracks
   useEffect(() => {
     audioRef.current.pause();
 
@@ -65,13 +60,11 @@ const AudioPlayer = ({ tracks, initialID }) => {
       setIsPlaying(true);
       startTimer();
     } else {
-      // Set the isReady ref as true for the next pass
       isReady.current = true;
     }
   }, [trackIndex]);
 
   const startTimer = () => {
-    // Clear any timers already running
     clearInterval(intervalRef.current);
 
     intervalRef.current = setInterval(() => {
@@ -107,14 +100,12 @@ const AudioPlayer = ({ tracks, initialID }) => {
   }, [trackIndex]);
 
   const onScrub = (value) => {
-    // Clear any timers already running
     clearInterval(intervalRef.current);
     audioRef.current.currentTime = value;
     setTrackProgress(audioRef.current.currentTime);
   };
 
   const onScrubEnd = () => {
-    // If not already playing, start
     if (!isPlaying) {
       setIsPlaying(true);
     }

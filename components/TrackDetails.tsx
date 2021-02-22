@@ -1,11 +1,9 @@
-import styles from "../styles/trackInfo.module.css";
+import styles from "../styles/audioplayer.module.css";
 
 type Props = {
-  //   id: string;
   cover: string;
   artist: string;
   song: string;
-  //   audioSrc: string;
 };
 
 export default function TrackDetails(props: Props) {

@@ -1,4 +1,4 @@
-import styles from "../styles/trackInfo.module.css";
+import styles from "../styles/audioplayer.module.css";
 
 const AudioControls = ({
   isPlaying,
