@@ -2,13 +2,20 @@ import styles from "../styles/audioplayer.module.css";
 import AudioControls from "./AudioControls";
 import TrackDetails from "./TrackDetails";
 import { useEffect, useState, useRef } from "react";
+import { APITrack } from "../utils/api";
+import useLocalStorage from "../hooks/localStorage";
 
-const AudioPlayer = ({ tracks, initialID }) => {
+type AudioItems = {
+  tracks: APITrack[];
+  initialID: string | string[];
+};
+
+const AudioPlayer = ({ tracks, initialID }: AudioItems) => {
   const initialTrackIndex = tracks.findIndex((track) => track.id === initialID);
 
   const [trackIndex, setTrackIndex] = useState(initialTrackIndex);
   const [trackProgress, setTrackProgress] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const { audioSrc, cover, artist, song } = tracks[trackIndex];
 
@@ -17,6 +24,26 @@ const AudioPlayer = ({ tracks, initialID }) => {
   const isReady = useRef(false);
 
   const { duration } = audioRef.current;
+
+  const id = typeof initialID === "string" ? initialID : initialID[0];
+
+  const [favoriteSongs, setFavoriteSongs] = useLocalStorage<string[]>(
+    "favoriteSongs",
+    []
+  );
+
+  const favorite = favoriteSongs.includes(id);
+
+  const handleFavorteClick = () => {
+    if (favorite) {
+      const newFavoriteSongs = favoriteSongs.filter(
+        (favoriteSong) => favoriteSong !== initialID
+      );
+      setFavoriteSongs(newFavoriteSongs);
+    } else {
+      setFavoriteSongs([...favoriteSongs, id]);
+    }
+  };
 
   const toPrevTrack = () => {
     if (trackIndex - 1 < 0) {
@@ -125,6 +152,9 @@ const AudioPlayer = ({ tracks, initialID }) => {
           <img src="/home-btn.svg" />
         </button>
         <p className={styles.nowPlaying}>Now Playing</p>
+        <button className={styles.likeBtn} onClick={handleFavorteClick}>
+          {favorite ? "💘" : "🖤"}
+        </button>
       </div>
       <TrackDetails cover={cover} artist={artist} song={song} />
       <div className={styles.player}>

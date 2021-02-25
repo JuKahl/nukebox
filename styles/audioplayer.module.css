@@ -122,3 +122,8 @@
   transition: background 0.2s ease;
   cursor: pointer;
 }
+
+.likeBtn {
+  background: transparent;
+  border-color: transparent;
+}

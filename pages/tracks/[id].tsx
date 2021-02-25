@@ -5,7 +5,8 @@ import AudioPlayer from "../../components/AudioPlayer";
 
 export default function Track() {
   const router = useRouter();
-  const { id } = router.query;
+  const { id: idQuery } = router.query;
+  const id = typeof idQuery === "string" ? idQuery : idQuery[0];
 
   const [tracks, setTracks] = useState<APITrack[]>(null);
 
@@ -18,5 +19,16 @@ export default function Track() {
     return <div> Loading...</div>;
   }
 
-  return <AudioPlayer tracks={tracks} initialID={id} />;
+  return (
+    <div>
+      <main>
+        <AudioPlayer tracks={tracks} initialID={id} />
+      </main>
+      <footer>
+        {/* <button onClick={() => setFavorite(!favorite)}>
+          {favorite ? "💘" : "🖤"}
+        </button> */}
+      </footer>
+    </div>
+  );
 }
