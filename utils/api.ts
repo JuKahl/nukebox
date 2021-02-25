@@ -3,10 +3,18 @@ export type APITrack = {
   cover: string;
   artist: string;
   song: string;
+  audioSrc: string;
 };
 
-export async function getTracks() {
-  const response = await fetch("/api/tracks");
-  const tracks: APITrack[] = await response.json();
-  return tracks;
+async function fetchURL<T>(url: string): Promise<T> {
+  const response = await fetch(url);
+  return await response.json();
+}
+
+export async function getTracks(): Promise<APITrack[]> {
+  return await fetchURL<APITrack[]>("/api/tracks");
+}
+
+export async function getTrack(id: string): Promise<APITrack> {
+  return await fetchURL<APITrack>(`/api/tracks/${id}`);
 }

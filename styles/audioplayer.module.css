@@ -1,0 +1,129 @@
+.container {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "trackinfo"
+    "player";
+  height: 100vh;
+}
+
+.header {
+  grid-area: header;
+  height: 4em;
+  display: grid;
+  grid-template-areas: "home playing null";
+}
+
+.nowPlaying {
+  grid-area: playing;
+  justify-self: center;
+  align-self: center;
+}
+
+.homeBtn {
+  grid-area: home;
+  background: transparent;
+  border-color: transparent;
+  justify-self: flex-start;
+  padding-left: 1.25em;
+}
+
+.trackInfo {
+  grid-area: trackinfo;
+  display: grid;
+  grid-template-areas:
+    "cover"
+    "song"
+    "artist";
+  justify-content: center;
+  text-align: center;
+}
+
+.cover {
+  grid-area: cover;
+  width: 23em;
+  height: 23em;
+  object-fit: cover;
+  border-radius: 25px;
+}
+
+.song {
+  color: var(--primary-text);
+  margin-top: 1em;
+  grid-area: song;
+  font-size: 1.25em;
+}
+
+.artist {
+  color: var(--secondary-text);
+  margin-top: 1em;
+  margin-bottom: 1em;
+  grid-area: artist;
+  font-size: 0.95em;
+}
+
+.player {
+  grid-area: player;
+  background-color: #282a3d;
+  width: 100%;
+  height: 12em;
+  display: grid;
+  align-items: end;
+  grid-template-areas: "progress" "audiocontrols";
+  border-radius: 40px 40px 0 0;
+  align-self: flex-end;
+}
+
+.audiocontrols {
+  display: grid;
+  grid-area: audiocontrols;
+  grid-template-areas: "back play for";
+  justify-content: space-evenly;
+}
+
+.backBtn {
+  background: transparent;
+  grid-area: back;
+  margin-bottom: 3em;
+  width: 4em;
+  height: 4em;
+  border-radius: 100%;
+  border-color: transparent;
+}
+
+.playBtn {
+  background: #4e5063;
+  grid-area: play;
+  width: 4em;
+  height: 4em;
+  border-radius: 100%;
+  border-color: transparent;
+}
+
+.forBtn {
+  background: transparent;
+  grid-area: for;
+  margin-bottom: 3em;
+  width: 4em;
+  height: 4em;
+  border-radius: 100%;
+  border-color: transparent;
+}
+
+.progress {
+  margin-left: auto;
+  margin-right: auto;
+  grid-area: progress;
+  height: 5px;
+  -webkit-appearance: none;
+  width: 80%;
+  border-radius: 8px;
+  background: #3b7677;
+  transition: background 0.2s ease;
+  cursor: pointer;
+}
+
+.likeBtn {
+  background: transparent;
+  border-color: transparent;
+}

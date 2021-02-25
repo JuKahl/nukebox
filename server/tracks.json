@@ -1,0 +1,51 @@
+[
+  {
+    "id": "scooter_paul-is-dead",
+    "cover": "https://images.unsplash.com/photo-1613473060226-dd81153a63db?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "artist": "Scooter",
+    "song": "Paul is Dead",
+    "audioSrc": "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/KBOO/The_Underscore_Orkestra/No_Money_No_Honey_All_We_Got_Is_Us/The_Underscore_Orkestra_-_02_-_Blue_Draggish.mp3"
+  },
+  {
+    "id": "metallica_the-unforgiven",
+    "cover": "https://images.unsplash.com/photo-1593642532842-98d0fd5ebc1a?ixid=MXwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "artist": "Metallica",
+    "song": "The Unforgiven",
+    "audioSrc": "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/KBOO/The_Underscore_Orkestra/No_Money_No_Honey_All_We_Got_Is_Us/The_Underscore_Orkestra_-_02_-_Blue_Draggish.mp3"
+  },
+  {
+    "id": "the-weekend_save-your-tears",
+    "cover": "https://images.unsplash.com/photo-1524650359799-842906ca1c06?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+    "artist": "The Weekend",
+    "song": "Save Your Tears",
+    "audioSrc": "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/KBOO/The_Underscore_Orkestra/No_Money_No_Honey_All_We_Got_Is_Us/The_Underscore_Orkestra_-_04_-_Magdalena.mp3"
+  },
+  {
+    "id": "347-aiden_dancing-in-my-room",
+    "cover": "https://images.unsplash.com/photo-1515333437113-6464312e1885?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+    "artist": "347 Aiden",
+    "song": "Dancing in My Room",
+    "audioSrc": "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/KBOO/The_Underscore_Orkestra/No_Money_No_Honey_All_We_Got_Is_Us/The_Underscore_Orkestra_-_05_-_Broken_String.mp3"
+  },
+  {
+    "id": "symba_battlefield-freestyle",
+    "cover": "https://images.unsplash.com/photo-1598456448049-1c68e921e8ad?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=928&q=80",
+    "artist": "Symba",
+    "song": "Battlefield Freestyle",
+    "audioSrc": "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/KBOO/The_Underscore_Orkestra/No_Money_No_Honey_All_We_Got_Is_Us/The_Underscore_Orkestra_-_02_-_Blue_Draggish.mp3"
+  },
+  {
+    "id": "mac-miller_ayye",
+    "cover": "https://images.unsplash.com/photo-1487180144351-b8472da7d491?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=752&q=80",
+    "artist": "Mac Miller",
+    "song": "Ayye",
+    "audioSrc": "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/KBOO/The_Underscore_Orkestra/No_Money_No_Honey_All_We_Got_Is_Us/The_Underscore_Orkestra_-_02_-_Blue_Draggish.mp3"
+  },
+  {
+    "id": "juice-wrld_righteous",
+    "cover": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
+    "artist": "Juice WRLD",
+    "song": "Righteous",
+    "audioSrc": "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/KBOO/The_Underscore_Orkestra/No_Money_No_Honey_All_We_Got_Is_Us/The_Underscore_Orkestra_-_02_-_Blue_Draggish.mp3"
+  }
+]
